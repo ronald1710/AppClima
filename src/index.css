@@ -5,14 +5,19 @@
 }
 
 body {
-  perspective: 800px;
+  background: radial-gradient(#D5F3FF 0%, #51B4E8 100%) ;
 }
 
 /* NavBar */
 
 .header{
   display: flex;
- 
+}
+
+.input-group{
+  width: 50vw;
+  margin: auto;
+
 }
 
 /* Card */
@@ -24,7 +29,7 @@ body {
 }
 
 .container-card{
-  display: flex;
+  display: grid;
   background: linear-gradient(#e5f2ff 0%, #d5f3ff 97.4%);
   border-radius: 4.85px;
   box-shadow: -10px 14px 28px 0px rgba(0,0,0,0.44);
@@ -36,18 +41,24 @@ body {
 .info1{
   margin-left: 20px;
   margin-top: 5px;
+  color: #56a4f1;
 }
 
 .info2{
-  margin-top: 5px;
-  align-items:end
-  
+  margin-top: 5px;  
+  margin-right: 10px;
+  color: #56a4f1;
 }
 
 img{
   height: 50%;
   width: 50%;
-  transform: translateY(-40px);
+  float: right;
+  margin-bottom: 10px;
+}
+
+.text{
+  float: right;
 }
 
 /* button */
@@ -55,6 +66,7 @@ img{
 .container-button{
   display: flex;
   margin-top: 80px;
+  margin-bottom: 20px;
 }
 
 
@@ -67,3 +79,4 @@ img{
   padding: 5px;
   margin: auto;
 }
+

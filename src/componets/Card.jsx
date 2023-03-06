@@ -12,8 +12,8 @@ const Card = () => {
               <h4>Queretaro, Mexico</h4>
             </div>
             <div className="info2 col">
-              <img src="/img/iconos/1.svg" className="text-end m-2" alt="" />
-              <h4 className="text-end m-2">Parcialmente Nublado</h4>
+              <img src="/img/iconos/2.svg" className="text-end" alt="" />
+              <h4 className="text-end text mt-4">Parcialmente Nublado</h4>
             </div>
           </div>
         </div>
