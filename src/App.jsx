@@ -6,38 +6,17 @@ import ChangeTemp from './componets/ChangeTemp'
 
 function App() {
 
-  const Geolocation = () => {
-    console.log("hola mundo")
-    const [latitude, setLatitude] = useState(null);
-    const [longitude, setLongitude] = useState(null);
-    console.log(latitude)
-    console.log(longitude)
-  
-    useEffect(() => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    }, []);
-
-
-
-  const[ weather, setWeather ] = useState( { } )
-  useEffect( () => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=978df9b08bba67d3413de88c32c09e1b`)
-    .then( resp => console.log(resp) )
-    .catch( error => console.error( error ) )
+    const [ weather, setWeather ] = useState( { } )
     console.log(weather)
-  }, [] )
-
-
-
-
+    useEffect(() => {
+      navigator.geolocation.getCurrentPosition( (position) => {
+          axios
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=978df9b08bba67d3413de88c32c09e1b&units=metric&lang=sp,es`)
+            .then( resp => setWeather(resp.data) )
+            .catch( error => console.error( error ) )
+      });
+      }, []);
+      
 
   return (
     <div className="App">
@@ -50,6 +29,6 @@ function App() {
      <ChangeTemp/>
     </div>
   )
-}}
+}
 
 export default App
