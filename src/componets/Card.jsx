@@ -1,4 +1,4 @@
-const Card = () => {
+const Card = (data) => {
   return (
     <div>
       <div className="containerCard">
@@ -9,7 +9,7 @@ const Card = () => {
               <h5>Viento</h5>
               <h5>Nubes</h5>
               <h5>Presion</h5>
-              <h4>Queretaro, Mexico</h4>
+              <h4>{data?.name}</h4>
             </div>
             <div className="info2 col">
               <img src="/img/iconos/2.svg" className="text-end" alt="" />
