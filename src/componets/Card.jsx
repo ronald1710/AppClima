@@ -1,4 +1,4 @@
-const Card = ({data}) => {
+const Card = ({ data }) => {
   return (
     <div>
       <div className="containerCard">
@@ -7,13 +7,20 @@ const Card = ({data}) => {
             <div className="info1 col">
               <h1>{data.main?.temp}°C</h1>
               <h5>Viento: {data.wind?.speed}</h5>
-              <h5>Cielo: {data.weather?.[0].main}</h5>
+              <h5>Cielo: {data.weather?.[0].description}</h5>
               <h5>Presion: {data.main?.pressure}</h5>
-              <h4>{data.name}, {data.sys?.country}</h4>
+              <h4> {data.name}, {data.sys?.country}</h4>
             </div>
             <div className="info2 col">
-              <img src="/img/iconos/2.svg" className="text-end" alt="" />
-              <h4 className="text-end text mt-4">Parcialmente Nublado</h4>
+              <img
+                src={`img/iconos/${data.weather?.[0].icon}.svg`}
+                className="text-end"
+                alt={data.weather?.[0].icon}
+              />
+              <br />
+              <h4 className="text-end text mt-4">
+                {data.weather?.[0].description}
+              </h4>
             </div>
           </div>
         </div>
