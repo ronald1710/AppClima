@@ -1,13 +1,16 @@
+import React, { useState } from "react";
+
 const Card = ({ data }) => {
+  const [isCentigrade, setIsCentigrade] = useState(true);
   return (
     <div>
       <div className="containerCard">
         <div className="container-card">
           <div className="info row">
             <div className="info1 col">
-              <h1>{data.main?.temp}°C</h1>
+              <h1>{isCentigrade ? `${data.main?.temp}°C` : `${(data.main?.temp *9/5) +32}°F`}</h1>
+              <h5>{data.weather?.[0].description}</h5>
               <h5>Viento: {data.wind?.speed}</h5>
-              <h5>Cielo: {data.weather?.[0].description}</h5>
               <h5>Presion: {data.main?.pressure}</h5>
               <h4> {data.name}, {data.sys?.country}</h4>
             </div>
@@ -25,6 +28,11 @@ const Card = ({ data }) => {
           </div>
         </div>
       </div>
+      <div>
+      <div className="container-button">
+      <button className="btn btn-card" onClick={() => setIsCentigrade (!isCentigrade)}>Cambiar a F°</button>
+    </div>
+    </div>
     </div>
   );
 };

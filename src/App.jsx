@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import NavBar from './componets/NavBar'
 import Card from './componets/Card'
-import ChangeTemp from './componets/ChangeTemp'
 
 function App() {
 
@@ -39,7 +38,6 @@ function App() {
      data = {weather}
      />
 
-     <ChangeTemp/>
     </div>
   )
 }
